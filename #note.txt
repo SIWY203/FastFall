@@ -1,0 +1,52 @@
+# Instalacja flask # ================ 
+
+py -m venv .venv
+source .venv/Scripts/activate
+pip install flask
+flask run
+
+
+
+# debugowanie i odświeżanie zmian
+if __name__ == '__main__':
+    app.run(debug=True)
+
+# uruchamianie w terminalu
+python app.py
+
+
+# Struktura katalogów # ================
+
+app/
+    static/
+        media/
+            plik
+    templates/
+        layout.html
+        index.html
+    __init__.py
+    views.py
+    layout.html 
+
+
+
+# Plik __init__.py # =================
+    - jak działa?
+
+
+
+# Tagi flask # =======================
+
+{% extends "layout.html" %}
+
+{% block nazwa %}
+{% endblock %}
+
+
+
+# Użycie url_for() # =================
+
+href="{{ url_for('index') }}"
+src="{{ url_for('static', filename='media/plik') }}"
+
+

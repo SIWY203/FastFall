@@ -1,0 +1,129 @@
+:root{
+    --color-black: #282828;
+    --color-white: #e9e9e9;
+    --color-accent: #a8bdd2;
+    --color-main: #223140;
+    --color-green: #356950;
+    --color-red: #d05310;
+    --ff: "DM Sans", sans-serif;
+    --h1: bold 54px/64px var(--ff);
+    --h2: bold 36px/36px var(--ff);
+    --h3: bold 24px/30px var(--ff);
+    --p: 18px/30px var(--ff);
+    --a: bold 18px/18px var(--ff);
+    --transition: all 0.2s ease-in-out;
+    --shadow: #00000030 0px 0px 10px 0px;
+}
+
+@font-face {
+    font-family: 'LemonDessert';
+    src: url('static/fonts/LemonDessert-demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: var(--ff);
+    margin: 0;
+}
+
+h1 {
+    color: var(--color-main);
+    font: var(--h1);
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+    color: var(--color-main);
+    font: var(--h2);
+    text-align: center;
+    margin: 0;
+}
+
+h3 {
+    color: var(--color-main);
+    font: var(--h3);
+    text-align: center;
+    margin: 0;
+}
+
+p {
+    color: var(--color-main);
+}
+
+a {
+    color: var(--color-main);
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--color-white);
+}
+
+.topbar {
+    display: flex;
+    padding: 30px;
+    background-image: linear-gradient(
+        77deg,
+        var(--color-green) 0%,
+        var(--color-white) 35%,
+        var(--color-white) 65%,
+        var(--color-red) 100%
+    );
+}
+
+.topbar .star,
+.topbar .rudy {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar .star img,
+.topbar .rudy img {
+    max-width: 120%;
+    max-height: 120%;
+}
+
+.topbar h1 {
+    flex: 1;
+    text-align: center;
+    font-family: 'LemonDessert', sans-serif;
+    font-size: 140px;
+    letter-spacing: 0.1em;
+    color: var(--color-main);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar {
+    background-color: var(--color-accent);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li a {
+    color: var(--color-black);
+    font: var(--a);
+    transition: var(--transition);
+    padding: 10px 25px;
+}
+
+.navbar li a:hover {
+    background-color: var(--color-white);
+}
