@@ -17,9 +17,13 @@
 
 @font-face {
     font-family: 'LemonDessert';
-    src: url('static/fonts/LemonDessert-demo.otf') format('opentype');
+    src: url('fonts/LemonDessert-demo.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -61,7 +65,7 @@ a {
     width: 100%;
     margin: 0 auto;
     min-height: 100vh;
-    background-color: var(--color-white);
+    /* background-color: var(--color-main); */
 }
 
 .topbar {
@@ -126,4 +130,46 @@ a {
 
 .navbar li a:hover {
     background-color: var(--color-white);
+}
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 3vw;
+    text-align: center;
+    opacity: 0.9;
+    background-color: var(--color-white);
+}
+
+#scroll-button {
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-black);
+    font: var(--a);
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('media/bg.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+#scroll-button:hover {
+    background-color: var(--color-main);
+    color: var(--color-white);
+    box-shadow: var(--shadow);
 }
