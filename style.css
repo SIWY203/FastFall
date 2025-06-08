@@ -9,7 +9,7 @@
     --h1: bold 54px/64px var(--ff);
     --h2: bold 36px/36px var(--ff);
     --h3: bold 24px/30px var(--ff);
-    --p: 18px/30px var(--ff);
+    --p: 24px/30px var(--ff);
     --a: bold 18px/18px var(--ff);
     --transition: all 0.2s ease-in-out;
     --shadow: #00000030 0px 0px 10px 0px;
@@ -54,6 +54,7 @@ h3 {
 
 p {
     color: var(--color-main);
+    font: var(--p);
 }
 
 a {
@@ -99,17 +100,22 @@ a {
     flex: 1;
     text-align: center;
     font-family: 'LemonDessert', sans-serif;
-    font-size: 140px;
+    font-size: min(15vw, 140px);
     letter-spacing: 0.1em;
     color: var(--color-main);
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .navbar {
     background-color: var(--color-accent);
     padding-top: 10px;
     padding-bottom: 10px;
+    position: relative;
+    z-index: 1; 
+    box-shadow: var(--shadow);
 }
 
 .navbar ul {
@@ -119,6 +125,10 @@ a {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.navbar li {
+    justify-content: center;
 }
 
 .navbar li a {
@@ -133,13 +143,68 @@ a {
 }
 
 .content {
-    max-width: 1000px;
+    max-width: min(1000px, 85vw);
     margin: auto;
+    box-shadow: var(--shadow);
     padding: 3vw;
     text-align: center;
-    opacity: 0.9;
-    background-color: var(--color-white);
+     background-color: rgba(233, 233, 233, 0.9);
+    z-index: 1;
 }
+
+.content img {
+    opacity: 1;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.small-img {
+    margin: auto;
+    max-width: 10vw!important;
+    display: block;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    font: var(--a);
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.button:hover {
+    background-color: #de3030;
+    color: var(--color-white);
+    box-shadow: var(--shadow);
+}
+
+.footer {
+    background-color: var(--color-main);
+    padding: 50px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--color-white);
+    font: var(--p);
+    margin: 0;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('media/bg.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
 
 #scroll-button {
     position: fixed;
@@ -155,21 +220,56 @@ a {
     transition: var(--transition);
 }
 
-
-#bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('media/bg.png');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+#scroll-button:hover {
+    background-color: var(--color-white);
+    color: var(--color-main);
+    box-shadow: var(--shadow);
 }
 
-#scroll-button:hover {
-    background-color: var(--color-main);
-    color: var(--color-white);
-    box-shadow: var(--shadow);
+
+@media screen and (max-width: 600px) {
+    .topbar {
+        max-height: 17vw;
+    }
+    .topbar h1 {
+        font-size: 12vw;
+    }
+
+    .topbar .star,
+    .topbar .rudy {
+        width: 100px;
+        height: 100px;
+    }
+
+    .navbar li a {
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --p: 18px/24px var(--ff);
+    }
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .navbar li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* usuń padding z .navbar jeśli jest potrzebne */
+    .navbar {
+        padding: 0;
+    }
 }
