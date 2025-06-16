@@ -187,6 +187,20 @@ a {
     display: block;
 }
 
+.col-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+    background-color: var(--color-white);
+}
+
+@media (max-width: 600px) {
+    .col-box {
+        grid-template-columns: 1fr; /* jedna kolumna na małych ekranach */
+    }
+}
+
 .button {
     display: inline-block;
     background-color: var(--color-main);
