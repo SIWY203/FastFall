@@ -107,6 +107,22 @@ a {
     margin-right: 5vw;
 }
 
+@media screen and (max-width: 600px) {
+    .topbar {
+        max-height: 17vw;
+    }
+
+    .topbar h1 {
+        font-size: 12vw;
+    }
+
+    .topbar .star,
+    .topbar .rudy {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 .navbar {
     background-color: var(--color-accent);
     padding-top: 10px;
@@ -164,6 +180,47 @@ a {
     background-color: var(--color-white);
 }
 
+@media screen and (max-width: 600px) {
+    .navbar > ul li a {
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --p: 18px/24px var(--ff);
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .navbar > ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    /* ukryj dropdown na małych ekranach */
+    .navbar > ul li:hover > .dropdown {
+    display: none;
+    }
+}
+
+
+
 .content {
     min-height: calc(100vh - 440px);
     max-width: min(1000px, 85vw);
@@ -183,7 +240,7 @@ a {
 
 .small-img {
     margin: auto;
-    max-width: 10vw !important;
+    width: clamp(150px, 20vw, 300px);
     display: block;
 }
 
@@ -191,8 +248,21 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin: 20px 0;
+    margin: 40px 0;
+}
+
+.col {
     background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.col img {
+    margin-bottom: 10px;
+    margin-top: auto;
 }
 
 @media (max-width: 600px) {
@@ -270,59 +340,4 @@ a {
     background-color: var(--color-white);
     color: var(--color-main);
     box-shadow: var(--shadow);
-}
-
-
-@media screen and (max-width: 600px) {
-    .topbar {
-        max-height: 17vw;
-    }
-
-    .topbar h1 {
-        font-size: 12vw;
-    }
-
-    .topbar .star,
-    .topbar .rudy {
-        width: 100px;
-        height: 100px;
-    }
-
-    .navbar li a {
-        padding: 10px 15px;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    :root {
-        --p: 18px/24px var(--ff);
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-    }
-
-    .navbar li {
-        width: 100%;
-        margin: 0;
-    }
-
-    .navbar li a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    /* usuń padding z .navbar jeśli jest potrzebne */
-    .navbar {
-        padding: 0;
-    }
-
-    /* ukryj dropdown na małych ekranach */
-    .navbar > ul li:hover > .dropdown {
-    display: none;
-}
 }
