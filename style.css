@@ -10,7 +10,7 @@
     --h2: bold 36px/36px var(--ff);
     --h3: bold 24px/30px var(--ff);
     --p: 24px/30px var(--ff);
-    --a: bold 18px/18px var(--ff);
+    --a: bold 20px/24px var(--ff);
     --transition: all 0.2s ease-in-out;
     --shadow: #00000030 0px 0px 10px 0px;
 }
@@ -60,6 +60,39 @@ p {
 a {
     color: var(--color-main);
     text-decoration: none;
+}
+
+.link {
+    color: var(--color-main);
+    text-decoration: solid underline;
+    font: var(--a);
+    transition: var(--transition);
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    font: var(--a);
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.button:hover {
+    background-color: #de3030;
+    color: var(--color-white);
+    box-shadow: var(--shadow);
+}
+
+.button-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    gap: 20px;
 }
 
 .wrapper {
@@ -219,8 +252,6 @@ a {
     }
 }
 
-
-
 .content {
     min-height: calc(100vh - 440px);
     max-width: min(1000px, 85vw);
@@ -271,30 +302,8 @@ a {
     }
 }
 
-.button {
-    display: inline-block;
-    background-color: var(--color-main);
-    color: var(--color-white);
-    font: var(--a);
-    padding: 15px 20px;
-    border-radius: 5px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.button:hover {
-    background-color: #de3030;
-    color: var(--color-white);
-    box-shadow: var(--shadow);
-}
-
-.button-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-    gap: 20px;
+.forum {
+    text-align: left;
 }
 
 .footer {
