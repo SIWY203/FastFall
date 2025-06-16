@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-black: #282828;
     --color-white: #e9e9e9;
     --color-accent: #a8bdd2;
@@ -72,13 +72,11 @@ a {
 .topbar {
     display: flex;
     padding: 30px;
-    background-image: linear-gradient(
-        77deg,
-        var(--color-green) 0%,
-        var(--color-white) 35%,
-        var(--color-white) 65%,
-        var(--color-red) 100%
-    );
+    background-image: linear-gradient(77deg,
+            var(--color-green) 0%,
+            var(--color-white) 35%,
+            var(--color-white) 65%,
+            var(--color-red) 100%);
 }
 
 .topbar .star,
@@ -114,11 +112,11 @@ a {
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
     box-shadow: var(--shadow);
 }
 
-.navbar ul {
+.navbar > ul {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,28 +125,53 @@ a {
     margin: 0;
 }
 
-.navbar li {
+.navbar > ul li {
     justify-content: center;
 }
 
-.navbar li a {
+.navbar > ul li a {
     color: var(--color-black);
     font: var(--a);
     transition: var(--transition);
     padding: 10px 25px;
 }
 
-.navbar li a:hover {
+.navbar > ul li a:hover {
+    background-color: var(--color-white);
+}
+
+.navbar > ul li:hover > .dropdown {
+    display: flex;
+}
+
+.dropdown {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    background-color: var(--color-accent);
+    top: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown > li a {
+    display: flex;
+}
+
+.dropdown li a:hover {
     background-color: var(--color-white);
 }
 
 .content {
+    min-height: calc(100vh - 440px);
     max-width: min(1000px, 85vw);
     margin: auto;
     box-shadow: var(--shadow);
     padding: 3vw;
     text-align: center;
-     background-color: rgba(233, 233, 233, 0.9);
+    background-color: rgba(233, 233, 233, 0.9);
     z-index: 1;
 }
 
@@ -160,7 +183,7 @@ a {
 
 .small-img {
     margin: auto;
-    max-width: 10vw!important;
+    max-width: 10vw !important;
     display: block;
 }
 
@@ -179,6 +202,15 @@ a {
     background-color: #de3030;
     color: var(--color-white);
     box-shadow: var(--shadow);
+}
+
+.button-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    gap: 20px;
 }
 
 .footer {
@@ -231,6 +263,7 @@ a {
     .topbar {
         max-height: 17vw;
     }
+
     .topbar h1 {
         font-size: 12vw;
     }
@@ -250,6 +283,7 @@ a {
     :root {
         --p: 18px/24px var(--ff);
     }
+
     .navbar ul {
         flex-direction: column;
         width: 100%;
@@ -272,4 +306,9 @@ a {
     .navbar {
         padding: 0;
     }
+
+    /* ukryj dropdown na małych ekranach */
+    .navbar > ul li:hover > .dropdown {
+    display: none;
+}
 }

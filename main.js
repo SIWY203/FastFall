@@ -1,6 +1,8 @@
+// przewijanianie do góry
+
 document.addEventListener('DOMContentLoaded', () => {
     const scrollBtn = document.getElementById("scroll-button");
-    
+
     if (scrollBtn) {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 400) {
